@@ -16,9 +16,7 @@ gulp.task('clean', function() {
 gulp.task('copyMain', ['clean'],function() {
     var indexCopy = gulp.src('src/index.html').pipe(gulp.dest('build'));
     var iconsCopy = gulp.src('src/icons/**/*').pipe(gulp.dest('build/icons'));
-    // var imagesCopy = gulp.src('src/images/**/*').pipe(gulp.dest('build/images'));
     var cssCopy = gulp.src('src/css/**/*').pipe(gulp.dest('build/css'));
-    // var pagesCopy = gulp.src('src/pages/**/*').pipe(gulp .dest('build/pages'));
     var libCopy = gulp.src('src/libs/**/*').pipe(gulp.dest('build/libs'));
     return merge(indexCopy, libCopy, cssCopy, iconsCopy);
 });
@@ -26,9 +24,7 @@ gulp.task('copyMain', ['clean'],function() {
 gulp.task('minifyJSDev', ['copyMain'], function() {
     return gulp.src(['src/**/*.js'])
         .pipe(order([
-            "config/**/*.js",
-            "controllers/**/*.js",
-            "main.js"
+            "app.js"
         ]))
         .pipe(concat('app.js'))
         .pipe(ngAnnotate())
