@@ -1,0 +1,26 @@
+{
+  "name": "my_page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+  },
+  "author": "Romesh Selvanathan",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "*",
+    "angular-typer" : "*",
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-util": "*",
+    "gulp-uglify" : "*",
+    "gulp-concat" : "*",
+    "gulp-connect" : "*",
+    "gulp-clean" : "*",
+    "gulp-order" : "*",
+    "gulp-ng-annotate" : "*",
+    "gulp-replace-task" : "*",
+    "merge-stream" : "*"
+  }
+}
