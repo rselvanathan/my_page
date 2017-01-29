@@ -1,13 +1,36 @@
-body{
-    background-color: black;
+html, body{
+    background-color: #303F9F;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
 }
 
 h1 {
     color: white;
+    text-align: center;
+    font-size: 6em;
 }
 
 h2 {
     color: white;
+    text-align: center;
+    font-size: 3em;
+}
+
+h1.smallScreen {
+    color: white;
+    text-align: center;
+    font-size: 4em;
+}
+
+h2.smallScreen {
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+h2.digitalFont {
+    font-family: 'Overpass Mono', monospace;
 }
 
 md-icon {
