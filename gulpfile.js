@@ -15,10 +15,11 @@ gulp.task('clean', function() {
 
 gulp.task('copyMain', ['clean'],function() {
     var indexCopy = gulp.src('src/index.html').pipe(gulp.dest('build'));
+    var pagesCopy = gulp.src('src/pages/**/*').pipe(gulp.dest('build/pages'));
     var iconsCopy = gulp.src('src/icons/**/*').pipe(gulp.dest('build/icons'));
     var cssCopy = gulp.src('src/css/**/*').pipe(gulp.dest('build/css'));
     var libCopy = gulp.src('src/libs/**/*').pipe(gulp.dest('build/libs'));
-    return merge(indexCopy, libCopy, cssCopy, iconsCopy);
+    return merge(indexCopy, libCopy, cssCopy, iconsCopy, pagesCopy);
 });
 
 gulp.task('minifyJSDev', ['copyMain'], function() {

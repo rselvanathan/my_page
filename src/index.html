@@ -20,60 +20,7 @@
         <base href="/">
     </head>
     <body ng-app="myApp">
-        <div layout="column" layout-align="center center" style="height: inherit" flex>
-
-            <div show-gt-xs hide-xs>
-                <h1>Romesh Selvan</h1>
-            </div>
-
-            <div show-xs hide>
-                <h1 class="smallScreen">Romesh Selvan</h1>
-            </div>
-
-            <div layout="row" show-gt-xs hide-xs>
-                <h2 class="digitalFont">
-                    <typer words="['Software', 'Full Stack', 'Game', 'Web', 'REST API', 'Java 8', 'Spring Boot', 'AWS', 'Docker', 'Scala', 'JavaScript', 'AngularJS', 'C++', 'SQL', 'MongoDB']"
-                           type-time="200"
-                           start-delay='1500'
-                           pause="1500"
-                           highlight-background='#212121'
-                           highlight-color='#D32F2F'
-                    ></typer>
-                    Developer
-                </h2>
-            </div>
-
-            <div layout="row" show-xs hide>
-                <h2 class="digitalFont smallScreen">
-                    <typer words="['Software', 'Full Stack', 'Game', 'Web', 'REST API', 'Java 8', 'Spring Boot', 'AWS', 'Docker', 'Scala', 'JavaScript', 'AngularJS', 'C++', 'SQL', 'MongoDB']"
-                           type-time="200"
-                           start-delay='1500'
-                           pause="1500"
-                           highlight-background='#212121'
-                           highlight-color='#D32F2F'
-                    ></typer>
-                    Developer
-                </h2>
-            </div>
-
-            <div layout="row">
-                <md-button class="md-grid-item-content" ng-href="https://github.com/rselvanathan" target="_blank">
-                    <md-icon md-svg-icon="icons/github.svg" aria-label="GitHub"></md-icon>
-                    <md-tooltip>GitHub</md-tooltip>
-                </md-button>
-
-                <md-button class="md-grid-item-content" ng-href="https://uk.linkedin.com/in/romesh-selvanathan-ab89b85a" target="_blank">
-                    <md-icon md-svg-icon="icons/linkedin.svg" aria-label="LinkedIn"></md-icon>
-                    <md-tooltip>LinkedIn</md-tooltip>
-                </md-button>
-
-                <md-button class="md-grid-item-content" ng-href="mailto:romeshselvan@hotmail.co.uk">
-                    <md-icon aria-label="email">email</md-icon>
-                    <md-tooltip>Email</md-tooltip>
-                </md-button>
-            </div>
-
-        </div>
+        <div style="height: inherit" flex ng-view />
     </body>
 
     <script src="js/app.js"></script>
