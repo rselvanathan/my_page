@@ -1,13 +1,7 @@
-var VideoDialogController = function($scope, $mdDialog) {
-    $scope.hide = function() {
-        $mdDialog.hide();
-    };
+var VideoDialogController = function($scope, $mdDialog, videoLink) {
+    $scope.videoLink = videoLink;
 
     $scope.cancel = function() {
         $mdDialog.cancel();
-    };
-
-    $scope.answer = function(answer) {
-        $scope.videoLink = answer;
     };
 };

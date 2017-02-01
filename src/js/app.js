@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngMaterial', 'ngRoute', 'typer', 'youtube-embed']);
+var app = angular.module('myApp', ['ngMaterial', 'ngRoute', 'typer', 'ngAnimate']);
 
 app.controller('viewController', ViewController);
 
@@ -19,3 +19,10 @@ app.config(function ($routeProvider, $locationProvider) {
 
     $locationProvider.html5Mode(false);
 });
+
+/* Filter added to make iFrame resource links work without error (youtube links) */
+app.filter('trusted', ['$sce', function ($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
+}]);

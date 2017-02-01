@@ -3,5 +3,8 @@ var ViewController = function ($scope, $location) {
      if(data.screenState === screenState.projectsView) {
          $location.path("/projects");
      }
+     if(data.screenState === screenState.homeView) {
+         $location.path("/");
+     }
   });
 };

@@ -2,17 +2,22 @@
     <div flex="10">
         <md-toolbar>
             <div layout="row" layout-align="center">
-                <md-button class="md-grid-item-content" ng-href="https://github.com/rselvanathan" target="_blank">
+                <md-button class="md-icon-button" ng-click="backHome()">
+                    <md-icon aria-label="GitHub">keyboard_backspace</md-icon>
+                    <md-tooltip>Back</md-tooltip>
+                </md-button>
+
+                <md-button class="md-icon-button" ng-href="https://github.com/rselvanathan" target="_blank">
                     <md-icon md-svg-icon="icons/github.svg" aria-label="GitHub"></md-icon>
                     <md-tooltip>GitHub</md-tooltip>
                 </md-button>
 
-                <md-button class="md-grid-item-content" ng-href="https://uk.linkedin.com/in/romesh-selvanathan-ab89b85a" target="_blank">
+                <md-button class="md-icon-button" ng-href="https://uk.linkedin.com/in/romesh-selvanathan-ab89b85a" target="_blank">
                     <md-icon md-svg-icon="icons/linkedin.svg" aria-label="LinkedIn"></md-icon>
                     <md-tooltip>LinkedIn</md-tooltip>
                 </md-button>
 
-                <md-button class="md-grid-item-content" ng-href="mailto:romeshselvan@hotmail.co.uk">
+                <md-button class="md-icon-button" ng-href="mailto:romeshselvan@hotmail.co.uk">
                     <md-icon aria-label="email">email</md-icon>
                     <md-tooltip>Email</md-tooltip>
                 </md-button>
@@ -28,11 +33,11 @@
                 </md-grid-tile-header>
                 <img src="https://i.imgur.com/V4c6E39.jpg" layout-fill/>
                 <md-grid-tile-footer layout="row" layout-align="center">
-                    <md-button ng-href="https://github.com/rselvanathan/star_rage" target="_blank">
+                    <md-button ng-click="openLink('https://github.com/rselvanathan/star_rage')">
                         <md-icon md-svg-icon="icons/github.svg" aria-label="GitHub"></md-icon>
                         <md-tooltip>GitHub to Star Rage</md-tooltip>
                     </md-button>
-                    <md-button>
+                    <md-button ng-click="playVideo('https://www.youtube.com/embed/Il942QWAwUw')">
                         <md-icon>play_circle_filled</md-icon>
                         <md-tooltip>Watch Star Rage Gameplay</md-tooltip>
                     </md-button>
@@ -45,9 +50,13 @@
                 </md-grid-tile-header>
                 <img src="https://i.imgur.com/9JuVdHO.jpg" layout-fill/>
                 <md-grid-tile-footer layout-align="center">
-                    <md-button ng-href="https://github.com/rselvanathan/escape" target="_blank">
+                    <md-button ng-click="openLink('https://github.com/rselvanathan/escape')">
                         <md-icon md-svg-icon="icons/github.svg" aria-label="GitHub"></md-icon>
                         <md-tooltip>GitHub to Escape</md-tooltip>
+                    </md-button>
+                    <md-button ng-click="playVideo('https://www.youtube.com/embed/BTdQwh-LtMQ')">
+                        <md-icon>play_circle_filled</md-icon>
+                        <md-tooltip>Watch Star Rage Gameplay</md-tooltip>
                     </md-button>
                 </md-grid-tile-footer>
             </md-grid-tile>
@@ -58,7 +67,7 @@
                 </md-grid-tile-header>
                 <img src="https://i.imgur.com/9r7heN2.jpg" layout-fill />
                 <md-grid-tile-footer layout-align="center">
-                    <md-button ng-href="https://github.com/rselvanathan/romcharm-app" target="_blank">
+                    <md-button ng-click="openLink('https://github.com/rselvanathan/romcharm-app')">
                         <md-icon md-svg-icon="icons/github.svg" aria-label="GitHub"></md-icon>
                         <md-tooltip>GitHub to RSVP site</md-tooltip>
                     </md-button>
@@ -71,7 +80,7 @@
                 </md-grid-tile-header>
                 <img src="https://i.imgur.com/3rWjvN2.jpg" layout-fill />
                 <md-grid-tile-footer layout-align="center">
-                    <md-button ng-href="https://github.com/rselvanathan/romcharm-rest" target="_blank">
+                    <md-button ng-click="openLink('https://github.com/rselvanathan/romcharm-rest')">
                         <md-icon md-svg-icon="icons/github.svg" aria-label="GitHub"></md-icon>
                         <md-tooltip>GitHub to REST API</md-tooltip>
                     </md-button>
@@ -84,7 +93,7 @@
                 </md-grid-tile-header>
                 <img src="https://i.imgur.com/HK6PRyw.jpg" layout-fill />
                 <md-grid-tile-footer layout-align="center">
-                    <md-button ng-href="https://github.com/rselvanathan/mailsender" target="_blank">
+                    <md-button ng-click="openLink('https://github.com/rselvanathan/mailsender')">
                         <md-icon md-svg-icon="icons/github.svg" aria-label="GitHub"></md-icon>
                         <md-tooltip>GitHub to Mail Sender</md-tooltip>
                     </md-button>
@@ -97,7 +106,7 @@
                 </md-grid-tile-header>
                 <img src="https://i.imgur.com/m1TdQGw.jpg" layout-fill />
                 <md-grid-tile-footer layout-align="center">
-                    <md-button ng-href="https://github.com/rselvanathan/completable-memcached" target="_blank">
+                    <md-button ng-click="openLink('https://github.com/rselvanathan/completable-memcached')">
                         <md-icon md-svg-icon="icons/github.svg" aria-label="GitHub"></md-icon>
                         <md-tooltip>GitHub to Memcached Client</md-tooltip>
                     </md-button>

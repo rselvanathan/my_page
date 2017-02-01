@@ -1,3 +1,15 @@
-<md-dialog style="width: 300px; height: 300px" flex aria-label="youtube">
-    <youtube-video style="width: 200px; height: 300px;" video-url="videoLink" player-width="'100%'" player-height="'300px'"></youtube-video>
+<md-dialog aria-label="youtube">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon aria-label="Close dialog">close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <iframe width="500" height="350" ng-src="{{videoLink | trusted}}" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </md-dialog-content>
 </md-dialog>
