@@ -36,3 +36,13 @@ h2.digitalFont {
 md-icon {
     color: white;
 }
+
+div.tiles img {
+    opacity: 1.0;
+}
+
+div.header md-grid-tile-header,
+div.header md-grid-tile-footer {
+    background-color: #3F51B5;
+}
+

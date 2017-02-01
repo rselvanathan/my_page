@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngMaterial', 'ngRoute', 'typer']);
+var app = angular.module('myApp', ['ngMaterial', 'ngRoute', 'typer', 'youtube-embed']);
 
 app.controller('viewController', ViewController);
 
@@ -13,8 +13,9 @@ app.config(function ($routeProvider, $locationProvider) {
             controller : HomeController
         })
         .when('/projects', {
-            templateUrl : 'pages/projects.html'
+            templateUrl : 'pages/projects.html',
+            controller : ProjectsController
         });
 
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(false);
 });
