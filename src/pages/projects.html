@@ -41,7 +41,7 @@
                         <md-icon>play_circle_filled</md-icon>
                         <md-tooltip>Watch Star Rage Gameplay</md-tooltip>
                     </md-button>
-                    <md-button class="md-icon-button" ng-click="openGallery()">
+                    <md-button class="md-icon-button" ng-click="openGallery('STAR_RAGE')">
                         <md-icon>image</md-icon>
                         <md-tooltip>Star Rage Gallery</md-tooltip>
                     </md-button>
@@ -62,7 +62,7 @@
                         <md-icon>play_circle_filled</md-icon>
                         <md-tooltip>Watch Escape Gameplay</md-tooltip>
                     </md-button>
-                    <md-button class="md-icon-button" ng-click="">
+                    <md-button class="md-icon-button" ng-click="openGallery('ESCAPE')">
                         <md-icon>image</md-icon>
                         <md-tooltip>Escape Gallery</md-tooltip>
                     </md-button>
@@ -123,6 +123,6 @@
 
         </md-grid-list>
 
-        <ng-image-gallery images="images" methods="methods" bg-close="false"></ng-image-gallery>
+        <ng-image-gallery images="images" methods="methods" thumbnails="false" bg-close="false"></ng-image-gallery>
     </div>
 </div>
