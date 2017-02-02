@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngMaterial', 'ngRoute', 'typer', 'ngAnimate']);
+var app = angular.module('myApp', ['ngMaterial', 'ngRoute', 'typer', 'ngAnimate', 'thatisuday.ng-image-gallery']);
 
 app.controller('viewController', ViewController);
 

@@ -10,7 +10,7 @@
   "dependencies": {
     "angular": "*",
     "angular-typer" : "*",
-    "angular-youtube-embed" : "*"
+    "ng-image-gallery" : "*"
   },
   "devDependencies": {
     "gulp": "*",

@@ -17,5 +17,20 @@ var ProjectsController = function ($scope, $mdDialog, $window) {
 
     $scope.backHome = function () {
         $scope.$emit('viewChange', {screenState : screenState.homeView});
-    }
+    };
+
+    $scope.images = [
+        {
+            url : 'https://i.imgur.com/V4c6E39.jpg'
+        },
+        {
+            url : 'https://i.imgur.com/9JuVdHO.jpg'
+        }
+    ];
+
+    $scope.methods = {};
+
+    $scope.openGallery = function () {
+        $scope.methods.open();
+    };
 };
