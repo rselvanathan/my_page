@@ -1,4 +1,25 @@
-var ProjectsController = function ($scope, $mdDialog, $window) {
+var ProjectsController = function ($scope, $mdDialog, $window, $http) {
+	// Init the Projects
+	$http.get('../resources/projects.json')
+		.success(function (projects) {
+			$scope.projects = projects;
+		})
+		.error(function (data) {
+			console.log("Error getting file");
+		});
+
+	$scope.hasGitHub = function (projectJson) {
+		return isItemInArray(buttonTypes.GITHUB, projectJson.buttonTypes);
+	};
+
+	$scope.hasVideo = function (projectJson) {
+		return isItemInArray(buttonTypes.VIDEO, projectJson.buttonTypes);
+	};
+
+	$scope.hasGallery = function (projectJson) {
+		return isItemInArray(buttonTypes.GALLERY, projectJson.buttonTypes);
+	};
+
     $scope.playVideo = function (videoToPlay) {
         $mdDialog.show({
             controller : VideoDialogController,
@@ -23,50 +44,16 @@ var ProjectsController = function ($scope, $mdDialog, $window) {
 
     $scope.images = [];
 
-    var starrageImages = [
-        {
-            url : 'https://i.imgur.com/7Kde97e.jpg'
-        },
-        {
-            url : 'https://i.imgur.com/LTvM1G6.jpg'
-        },
-        {
-            url : 'https://i.imgur.com/apKizGw.jpg'
-        },
-        {
-            url : 'https://i.imgur.com/Z9jNHTM.jpg'
-        },
-        {
-            url : 'https://i.imgur.com/GFDfLRO.jpg'
-        }
-    ];
-
-	var escapeImages = [
-		{
-			url : 'https://i.imgur.com/Hojf47Q.jpg'
-		},
-		{
-			url : 'https://i.imgur.com/kJP7MCx.jpg'
-		},
-		{
-			url : 'https://i.imgur.com/XFCNOe3.jpg'
-		},
-		{
-			url : 'https://i.imgur.com/fpcJEiI.jpg'
-		},
-		{
-			url : 'https://i.imgur.com/XdIvAq6.jpg'
-		}
-	];
-
     $scope.methods = {};
 
-    $scope.openGallery = function (projectType) {
-        if(projectType === 'STAR_RAGE') {
-			$scope.images = starrageImages;
-        } else {
-			$scope.images = escapeImages;
-		}
+    $scope.openGallery = function (galleryImages) {
+        $scope.images = galleryImages;
         $scope.methods.open();
     };
+
+    // Private Functions
+
+	function isItemInArray(itemName, array) {
+		return array.indexOf(itemName) > -1;
+	}
 };

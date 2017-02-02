@@ -19,7 +19,8 @@ gulp.task('copyMain', ['clean'],function() {
     var iconsCopy = gulp.src('src/icons/**/*').pipe(gulp.dest('build/icons'));
     var cssCopy = gulp.src('src/css/**/*').pipe(gulp.dest('build/css'));
     var libCopy = gulp.src('src/libs/**/*').pipe(gulp.dest('build/libs'));
-    return merge(indexCopy, libCopy, cssCopy, iconsCopy, pagesCopy);
+    var resCopy = gulp.src('src/resources/**/*').pipe(gulp.dest('build/resources'));
+    return merge(indexCopy, libCopy, cssCopy, iconsCopy, pagesCopy, resCopy);
 });
 
 gulp.task('minifyJSDev', ['copyMain'], function() {
