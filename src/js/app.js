@@ -1,8 +1,12 @@
 var app = angular.module('myApp', ['ngMaterial', 'ngRoute', 'typer', 'ngAnimate', 'thatisuday.ng-image-gallery']);
 
+app.constant('baseApiUrl', "https://api.romandcharmi.com");
+
+app.service('globalData', GlobalData);
+
 app.controller('viewController', ViewController);
 
-app.config(function ($routeProvider, $locationProvider) {
+app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
     $routeProvider
         .when('/', {
             templateUrl : 'pages/home.html',
@@ -17,7 +21,12 @@ app.config(function ($routeProvider, $locationProvider) {
             controller : ProjectsController
         });
 
-    $locationProvider.html5Mode(false);
+	$mdThemingProvider.theme('whiteTheme')
+		.primaryPalette('grey', {
+		    'default' : '50'
+        });
+
+	$locationProvider.html5Mode(false);
 });
 
 /* Filter added to make iFrame resource links work without error (youtube links) */

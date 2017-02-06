@@ -33,6 +33,18 @@ h2.digitalFont {
     font-family: 'Overpass Mono', monospace;
 }
 
+h1.errorScreen {
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+h2.errorScreen {
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+}
+
 md-icon {
     color: white;
 }

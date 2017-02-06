@@ -24,15 +24,15 @@
             </div>
         </md-toolbar>
     </div>
-    <div flex="90" class="tiles header">
+    <div flex="90" class="tiles header" ng-show="!loading && !responseError">
 
-        <md-grid-list md-cols-xs="1 " md-cols-sm="2" md-cols="3" md-row-height="4:3" md-gutter="20px" >
+        <md-grid-list md-cols-xs="1 " md-cols-sm="2" md-cols="3" md-row-height="4:3" md-gutter="20px">
 
             <md-grid-tile ng-repeat="project in projects">
                 <md-grid-tile-header layout-align="center center" >
                     <h3>{{project.projectTitle}}</h3>
                 </md-grid-tile-header>
-                <img ng-src="{{project.tileImage}}" layout-fill/>
+                <img ng-src="{{project.titleImageLink}}" layout-fill/>
                 <md-grid-tile-footer layout="row" layout-align="center">
                     <md-button ng-if="hasGitHub(project)" class="md-icon-button" ng-click="openLink(project.githubLink)">
                         <md-icon md-svg-icon="icons/github.svg" aria-label="GitHub"></md-icon>
@@ -52,5 +52,15 @@
         </md-grid-list>
 
         <ng-image-gallery images="images" methods="methods" thumbnails="false" bg-close="false"></ng-image-gallery>
+    </div>
+
+    <div md-theme="whiteTheme" layout="column" layout-align="center center" flex="90" ng-show="loading && !responseError">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <div md-theme="whiteTheme" layout="column" layout-align="center center" flex="90" ng-show="responseError">
+        <div><h1 class="errorScreen">Oops! An error has occured while loading the projects :( </h1></div>
+        <div><h2 class="errorScreen">Please refresh the page in a minute or so.</h2></div>
+        <div><h2 class="errorScreen">If refreshing has not helped - Please visit the links on the toolbar instead</h2></div>
     </div>
 </div>

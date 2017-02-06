@@ -1,13 +1,17 @@
-var ProjectsController = function ($scope, $mdDialog, $window, $http) {
-	// Init the Projects
-	$http.get('../resources/projects.json')
-		.success(function (projects) {
-			$scope.projects = projects;
-		})
-		.error(function (data) {
-			console.log("Error getting file");
-		});
+var ProjectsController = function ($scope, $mdDialog, $window, $http, baseApiUrl, globalData) {
 
+	// Controller Initialization
+	$scope.loading = true;
+	$scope.responseError = false;
+
+	// Initialize the projects value from rest end point when page is first entered
+	authenticate().then(function success(response) {
+		getProjects(response.data.token);
+	}, function error() {
+		$scope.responseError=true;
+	});
+
+	// Scope functions
 	$scope.hasGitHub = function (projectJson) {
 		return isItemInArray(buttonTypes.GITHUB, projectJson.buttonTypes);
 	};
@@ -55,5 +59,38 @@ var ProjectsController = function ($scope, $mdDialog, $window, $http) {
 
 	function isItemInArray(itemName, array) {
 		return array.indexOf(itemName) > -1;
+	}
+
+	function authenticate() {
+		return $http({
+			url: baseApiUrl + "/users/auth",
+			method: "POST",
+			data: getAuthBody(),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		});
+	}
+
+	function getAuthBody() {
+		return {
+			username : globalData.apiUsername,
+			password : globalData.apiPassword
+		};
+	}
+
+	function getProjects(token) {
+		$http({
+			url:baseApiUrl+"/projects",
+			method:"GET",
+			headers: {
+				"Authorization": token
+			}
+		}).then(function success(response) {
+			$scope.loading = false;
+			$scope.projects = response.data;
+		}, function error() {
+			$scope.responseError=true;
+		});
 	}
 };

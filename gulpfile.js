@@ -27,6 +27,7 @@ gulp.task('minifyJSDev', ['copyMain'], function() {
     return gulp.src(['src/js/**/*.js'])
         .pipe(order([
             "controllers/**/*.js",
+            "services/**/*.js",
             "app.js"
         ]))
         .pipe(concat('app.js'))
