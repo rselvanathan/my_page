@@ -13,7 +13,7 @@ else
  	docker images -q --filter "dangling=true" | xargs docker rmi
 fi
 docker run -d \
--e VIRTUAL_HOST=romeshselvan.com,www.romeshselvan.com \
--e LETSENCRYPT_HOST=romeshselvan.com,www.romeshselvan.com \
--e LETSENCRYPT_EMAIL=romeshselvan@hotmail.co.uk \
+-e VIRTUAL_HOST= \
+-e LETSENCRYPT_HOST= \
+-e LETSENCRYPT_EMAIL= \
 --name my_page -it rselvanathan/my_page:latest
