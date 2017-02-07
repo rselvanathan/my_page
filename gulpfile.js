@@ -19,11 +19,10 @@ gulp.task('copyMain', ['clean'],function() {
     var iconsCopy = gulp.src('src/icons/**/*').pipe(gulp.dest('build/icons'));
     var cssCopy = gulp.src('src/css/**/*').pipe(gulp.dest('build/css'));
     var libCopy = gulp.src('src/libs/**/*').pipe(gulp.dest('build/libs'));
-    var resCopy = gulp.src('src/resources/**/*').pipe(gulp.dest('build/resources'));
-    return merge(indexCopy, libCopy, cssCopy, iconsCopy, pagesCopy, resCopy);
+    return merge(indexCopy, libCopy, cssCopy, iconsCopy, pagesCopy);
 });
 
-gulp.task('minifyJSDev', ['copyMain'], function() {
+gulp.task('minifyJS', ['copyMain'], function() {
     return gulp.src(['src/js/**/*.js'])
         .pipe(order([
             "controllers/**/*.js",
@@ -44,13 +43,13 @@ gulp.task('connectBuild', function() {
     connect.server({root:'build', port:8081});
 });
 
-gulp.task('reloadDev', ['minifyJSDev'],function() {
+gulp.task('reload', ['minifyJS'],function() {
     gulp.src('src/**/*').pipe(connect.reload());
 });
 
-gulp.task('watchDev', function() {
-    gulp.watch('src/**/*', ['reloadDev']);
+gulp.task('watch', function() {
+    gulp.watch('src/**/*', ['reload']);
 });
 
-gulp.task('buildDev', ['minifyJSDev']);
-gulp.task('deployDev', ['connectBuild', 'watchDev']);
+gulp.task('build', ['minifyJS']);
+gulp.task('deployDev', ['connectBuild', 'watch']);

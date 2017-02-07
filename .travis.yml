@@ -1,0 +1,35 @@
+notifications:
+  email:
+    recipients:
+     - romesh69@hotmail.com
+
+    on_success: never
+    on_failure: change
+
+# safelist
+branches:
+  only:
+  - master
+
+language: node_js
+sudo: required
+services:
+  - docker
+
+# Build the Java app
+node_js:
+  - node
+before_script:
+  - npm install
+  - npm install -g gulp
+script :
+  - gulp build
+
+#Build the Docker image and push to registry
+after_success:
+  - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+  - docker build -t rselvanathan/my_page:latest .
+  - docker push rselvanathan/my_page
+  # Deploy to instance
+  - openssl aes-256-cbc -K "$ENCRYPT_K" -iv "$ENCRYPT_IV" -in "./deploy_key.enc" -out "./deploy_key" -d
+  - chmod 600 ./deploy_key && ssh -o StrictHostKeyChecking=no -i ./deploy_key $SSH_USER@$SSH_IP './deploy-my_page.sh'
