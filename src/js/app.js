@@ -26,7 +26,7 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
 		    'default' : '50'
         });
 
-	$locationProvider.html5Mode(false);
+	$locationProvider.html5Mode(true);
 });
 
 /* Filter added to make iFrame resource links work without error (youtube links) */
