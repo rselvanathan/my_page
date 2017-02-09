@@ -1,5 +1,6 @@
 var buttonTypes = {
 	GITHUB : 'GITHUB',
 	GALLERY : 'GALLERY',
-	VIDEO : 'VIDEO'
+	VIDEO : 'VIDEO',
+	DIRECT_LINK : 'DIRECT_LINK'
 };

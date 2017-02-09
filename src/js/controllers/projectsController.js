@@ -24,6 +24,10 @@ var ProjectsController = function ($scope, $mdDialog, $window, $http, baseApiUrl
 		return isItemInArray(buttonTypes.GALLERY, projectJson.buttonTypes);
 	};
 
+	$scope.hasDirectLink = function (projectJson) {
+		return isItemInArray(buttonTypes.DIRECT_LINK, projectJson.buttonTypes);
+	};
+
     $scope.playVideo = function (videoToPlay) {
         $mdDialog.show({
             controller : VideoDialogController,

@@ -46,6 +46,10 @@
                         <md-icon>image</md-icon>
                         <md-tooltip>Project Gallery</md-tooltip>
                     </md-button>
+                    <md-button ng-if="hasDirectLink(project)" class="md-icon-button" ng-click="openLink(project.directLink)">
+                        <md-icon>keyboard_tab</md-icon>
+                        <md-tooltip>Direct Project Link</md-tooltip>
+                    </md-button>
                 </md-grid-tile-footer>
             </md-grid-tile>
 
