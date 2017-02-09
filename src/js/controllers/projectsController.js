@@ -87,6 +87,7 @@ var ProjectsController = function ($scope, $mdDialog, $window, $http, baseApiUrl
 		$http({
 			url:baseApiUrl+"/projects",
 			method:"GET",
+			cache : true,
 			headers: {
 				"Authorization": token
 			}
