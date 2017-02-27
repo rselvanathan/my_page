@@ -1,6 +1,6 @@
 var app = angular.module('myApp', ['ngMaterial', 'ngRoute', 'typer', 'ngAnimate', 'thatisuday.ng-image-gallery']);
 
-app.constant('baseApiUrl', "https://api.romandcharmi.com");
+app.constant('baseApiUrl', "https://api.romeshselvan.com");
 
 app.service('globalData', GlobalData);
 
